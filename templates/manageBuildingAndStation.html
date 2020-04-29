@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GT Food Truck - Mange Building &amp; Station
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dropdown.css') }}"></link>
+{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <p class="main-title">Manage Building &amp; Station</p>
+    <table class="table-4col-layout-container">
+        <tr>
+            <td>Building Name</td>
+            <td id="building-select-wrapper">
+            </td>
+            <td>Building Tag (contain)</td>
+            <td>
+                <input type="text" class="narrower-input-textbox" id="building-tag-input"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Station Name</td>
+            <td id="station-select-wrapper">
+            </td>
+            <td>Capacity</td>
+            <td>
+                <table calss="inner-table" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="inner-table-cell"><input type="text" class="narrowest-input-textbox" id="capacity-input-low" style="display: flex"/></td>
+                        <td class="inner-table-cell"><img src="{{ url_for('static', filename='image/dash.png') }}" class="dash-icon"/></td>
+                        <td class="inner-table-cell"><input type="text" class="narrowest-input-textbox" id="capacity-input-high" style="display: flex"/></td>
+                        <span class="error-message" id="invalid-range-error">* invalid range</span>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div class="div-button-container">
+        <button id="filter-button">Filter</button>
+    </div>
+    <table class="table-display" cellpadding="10" id="target-table">
+    </table>
+    <table style="position: relative; left: 0;">
+        <tr>
+            <td rowspan=2>
+                <div class="div-button-container">
+                    <button id="back-button">Back</button>
+                </div>
+            </td>
+            <td>
+                <div class="div-button-container">
+                    <button id="create-building-button">Create Building</button>
+                    <button id="update-building-button">Update Building</button>
+                    <button id="delete-building-button">Delete Building</button>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="div-button-container">
+                    <button id="create-station-button">Create Station</button>
+                    <button id="update-station-button">Update Station</button>
+                    <button id="delete-station-button">Delete Station</button>
+                </div>
+                <span class="error-message" style="left: 0; top: 10;" id="none-selected-error">* no building/station selected</span>
+            </td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/dropdown.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/manageBuildingAndStation.js') }}"></script>
+{% endblock %}

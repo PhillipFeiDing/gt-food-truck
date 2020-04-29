@@ -1,0 +1,27 @@
+.multiselect-wrapper {
+    height: 120px;
+    overflow: scroll;
+    padding: 5px;
+    outline: none;
+    border-top: 1px solid rgb(120, 120, 120);
+    border-left: 1px solid rgb(190, 190, 190);
+    border-bottom: 1px solid rgb(220, 220, 220);
+    border-right: 1px solid rgb(190, 190, 190);
+    box-shadow: inset 0px 1px 0px 0px rgb(190, 190, 190);
+}
+.multiselect {
+    float: left;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background: rgb(250, 250, 250);
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid rgb(110, 110, 110);
+    border-radius: 20px;
+    cursor: pointer;
+}
+.multiselect-selected {
+    background: rgb(35, 153, 207) !important;
+}

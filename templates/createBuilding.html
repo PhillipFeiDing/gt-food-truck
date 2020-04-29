@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GT Food Truck - Create Building
+{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <p class="main-title">Create Building</p>
+    <table class="table-2col-layout-container">
+        <tr>
+            <td style="width: 120px;">Name</td>
+            <td>
+                <input type="text" class="wide-input-textbox" id="building-name-input"/>
+                <span class="error-message" id="building-name-error" style="left: 20px;">* empty or already exists</span>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">Description</td>
+            <td>
+                <textarea rows="10" id="description-textarea"></textarea>
+                <span class="error-message" id="building-description-error" style="left: 20px; top: 215px;">* empty</span>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">Tags</td>
+            <td>
+                <table id="tag-table" class="inner-table" cellpadding="0" cellspacing="0" style="position: relative; top: -26px; border-spacing: 0 20px;">
+                    <tr>
+                        <td class="inner-table-cell">
+                            <input type="text" class="narrow-input-textbox" id="new-tag-input"/>
+                            <span class="error-message" id="no-tag-error" style="top: 30px;">* must have at least one tag</span>
+                        </td>
+                        <td class="inner-table-cell" style="text-align: left"><img src="{{ url_for('static', filename='image/plus.png') }}" class="dash-icon image-icon-click add-tag-button"/></td>
+                        <td class="inner-table-cell" style="text-align: right"><img src="{{ url_for('static', filename='image/empty.png') }}" class="dash-icon"/></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div class="div-button-container" style="margin-top: -5px;">
+        <button id="back-button">Back</button>
+        <button id="create-button">Create</button>
+    </div>
+    <div style="display: none;" id="minus-button-image-path-data">{{ url_for('static', filename='image/minus.png') }}</div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/createBuilding.js') }}"></script>
+{% endblock %}

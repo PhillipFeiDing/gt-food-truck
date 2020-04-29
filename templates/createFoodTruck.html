@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GT Food Truck - Create Food Truck
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dropdown.css') }}"></link>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/multiselect.css') }}"></link>
+{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <p class="main-title">Create Food Truck</p>
+    <table class="table-2col-layout-container">
+        <tr>
+            <td style="width: 120px;">Name</td>
+            <td>
+                <input type="text" class="wider-input-textbox" id="food-name-input"/>
+                <span class="error-message" id="food-truck-name-error" style="left: 20px;">* empty or already exists</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Station</td>
+            <td>
+                <div class="custom-select unselectable wide-select station-select-div station-name-select-class" id="station-name-select-wrapper">
+                    <select id="station-select">
+                        <option value="">&nbsp;</option>
+                    </select>
+                </div>
+                <span class="error-message" id="station-error" style="left: 20px;">* empty</span>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">Assigned Staff</td>
+            <td style="text-align: left; width: 400px;">
+                <div class="multiselect-wrapper" id="staff-select-wrapper">
+                </div>
+                <span class="error-message" id="staff-error" style="left: 20px; top: 145px;">* must assign at least one staff</span>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                Menu Item
+                <span class="error-message" id="no-menu-item-error">* must have at least one</span>
+            </td>
+            <td>
+                <table id="menu-item-table" class="inner-table" cellpadding="0" cellspacing="0" style="position: relative; top: -26px; border-spacing: 0 20px;">
+                    <tr>
+                        <td class="inner-table-cell">
+                            Food
+                        </td>
+                        <td class="inner-table-cell" id='menu-item-select-wrapper'>
+                            <div class="custom-select unselectable narrow-select menu-item-select-div">
+                                <select id="menu-item-select">
+                                    <option value="">&nbsp;</option>
+                                </select>
+                            </div>
+                            <span class="error-message" id="no-food-selected-error" style="top: 30px;">* empty</span>
+                        </td>
+                        <td class="inner-table-cell">
+                            Price
+                        </td>
+                        <td class="inner-table-cell">
+                            <input type="text" class="narrowest-input-textbox" id="price-input"/>
+                            <span class="error-message" id="price-error" style="top: 30px;">* invalid</span>
+                        </td>
+                        <td class="inner-table-cell" style="text-align: left"><img src="{{ url_for('static', filename='image/plus.png') }}" class="dash-icon image-icon-click add-tag-button"/></td>
+                        <td class="inner-table-cell" style="text-align: right"><img src="{{ url_for('static', filename='image/empty.png') }}" class="dash-icon"/></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div class="div-button-container" style="margin-top: -5px;">
+        <button id="back-button">Back</button>
+        <button id="create-button">Create</button>
+    </div>
+    <div style="display: none;" id="minus-button-image-path-data">{{ url_for('static', filename='image/minus.png') }}</div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/dropdown.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/multiselect.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/createFoodTruck.js') }}"></script>
+{% endblock %}

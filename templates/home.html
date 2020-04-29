@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GT Food Truck - Home
+{% endblock %}
+
+{% block body %}
+<div class="main-container" style="padding-left: 0; padding-right: 0">
+    <p class="main-title">Home</p>
+    <div class="div-large-button-container">
+        <button class="large-button" id="explore-button" disabled>Explore</button>
+        <button class="large-button" id="view-order-history-button" disabled>View Order History</button>
+        <button class="large-button" id="view-current-information-button" disabled>View Current Information</button>
+    </div>
+    <div class="div-large-button-container">
+        <button class="large-button" id="manage-food-truck-button" disabled>Manage Food Truck</button>
+        <button class="large-button" id="view-food-truck-summary-button" disabled>View Food Truck Summary</button>
+    </div>
+    <div class="div-large-button-container">
+        <button class="large-button" id="manage-building-and-station-button" disabled>Manage Building & Station</button>
+        <button class="large-button" id="manage-food-button" disabled>Manage Food</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.cookie.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}

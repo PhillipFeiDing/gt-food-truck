@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GT Food Truck - Manage Food
+{% endblock %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dropdown.css') }}"></link>
+{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <p class="main-title">Manage Food</p>
+    <table style="margin-bottom: 60px;">
+        <tr>
+            <td>Name</td>
+            <td id="food-name-select-wrapper">
+            </td>
+            <td>
+                <div class="div-button-container" style="margin: 0 0 0 75px;">
+                    <button id="filter-button">Filter</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table class="table-display" cellpadding="10" id="target-table">
+        <tr>
+            <td><p style="position: relative; left: 0; padding: 0 20px;">Name<img src="{{ url_for('static', filename='image/sort.png') }}" class="dash-icon image-icon-click sort-image-icon" value="name"/></p></td>
+            <td><p style="position: relative; left: 0; padding: 0 20px;">Menu Count<img src="{{ url_for('static', filename='image/sort.png') }}" class="dash-icon image-icon-click sort-image-icon" value="menuCount"/></p></td>
+            <td><p style="position: relative; left: 0; padding: 0 20px;">Purchase Count<img src="{{ url_for('static', filename='image/sort.png') }}" class="dash-icon image-icon-click sort-image-icon" value="purchaseCount"/></p></td>
+        </tr>
+    </table>
+    <div class="div-button-container" style="position: relative;">
+        <button id="back-button">Back</button>
+        <button id="delete-button">Delete</button>
+        <button id="create-button">Create</button>
+        <span class="error-message" style="left: 0; top: -25px;" id="none-selected-error">* no food selected</span>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/dropdown.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/manageFood.js') }}"></script>
+{% endblock %}

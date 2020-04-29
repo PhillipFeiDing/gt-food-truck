@@ -1,0 +1,232 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  left: 0;
+}
+
+p, span, td, button{
+  font-family: Arial;
+  font-size: 18px;
+}
+
+input[type=text], input[type=password], textarea {
+  font-size: 14px;
+  height: 30px;
+  width: 200px;
+  padding: 5px;
+  outline: none;
+  border-top: 1px solid rgb(120, 120, 120);
+  border-left: 1px solid rgb(190, 190, 190);
+  border-bottom: 1px solid rgb(220, 220, 220);
+  border-right: 1px solid rgb(190, 190, 190);
+  box-shadow: inset 0px 1px 0px 0px rgb(190, 190, 190);
+}
+input[type="text"]:disabled {
+  color: #000000;
+  background: rgb(240, 240, 240);
+}
+input[type=text].wide-input-textbox, textarea {
+  width: 300px;
+}
+input[type=text].wider-input-textbox {
+  width: 400px;
+}
+textarea {
+  height: 200px;
+}
+input[type=text].narrow-input-textbox, input[type=password].narrow-input-textbox{
+  width: 180px;
+}
+input[type=text].narrower-input-textbox {
+  width: 100px;
+}
+input[type=text].narrowest-input-textbox {
+  width: 50px;
+}
+input[type=radio] {
+  height: 15px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.radio-button-left {
+  margin-right: 10px;
+}
+.radio-button-prompt {
+  padding-right: 20px;
+}
+.custom-select {
+  width: 180px;
+}
+.narrow-select {
+  width: 150px;
+}
+.narrower-select {
+  width: 100px;
+}
+.wide-select {
+  width: 300px;
+}
+.ui-datepicker-trigger {
+  position: relative;
+  top: 15px;
+  cursor: pointer;
+}
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.main-container {
+  display: inline-block;
+  border: 2px solid rgb(77, 115, 190);
+  border-radius: 2px;
+  padding: 30px;
+  /* position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); */
+  position: relative;
+  margin: 50px;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.table-display {
+  text-align: center;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+.table-display td {
+  border: 1px solid black;
+  padding: 10px 10px;
+  line-height: 20px;
+}
+.table-display .radio-button-wrapper {
+  text-align: left;
+  padding-left: 10px;
+}
+.inner-table-cell {
+  padding: 0 !important;
+}
+.table-2col-layout-container td, .table-4col-layout-container td, .table-display {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: relative;
+  left: 0;
+  line-height: 100%
+}
+.table-2col-layout-container td:nth-child(1), .table-4col-layout-container td:nth-child(1), .table-4col-layout-container td:nth-child(3) {
+  text-align: left;
+  padding-right: 20px;
+}
+.table-2col-layout-container td:nth-child(2) {
+  text-align: right;
+  padding-left: 20px;
+}
+.table-4col-layout-container td:nth-child(4) {
+  text-align: right;
+}
+.table-4col-layout-container td:nth-child(2) {
+  padding-right: 20px;
+}
+.table-4col-layout-container td:nth-child(3) {
+  padding-left: 20px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bolder;
+  margin-bottom: 30px;
+}
+.sub-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+.sub-title-highlight {
+  font-size: 20px;
+  padding-left: 80px;
+  font-weight: bolder;
+}
+.highlight {
+  text-decoration: underline;
+  font-weight: bolder;
+  font-size: 20px !important;
+}
+.div-button-container {
+  display: flex;
+  margin-top: 30px;
+}
+.div-button-container button {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 125px;
+  height: 35px;
+  border-radius: 5px;
+  background: rgb(35, 153, 207);
+  cursor: pointer;
+  outline: none;
+  color: #ffffff;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.div-button-container button:active, .div-large-button-container .large-button:active {
+  transform: translate(1px, 1px);
+}
+.div-large-button-container {
+  display: flex;
+  margin-top: 30px;
+}
+.div-large-button-container .large-button {
+  min-width: 125px;
+  height: 50px;
+  border-radius: 5px;
+  background: rgb(35, 153, 207);
+  cursor: pointer;
+  outline: none;
+  color: #ffffff;
+  border: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+}
+button:disabled {
+  background: rgb(220, 220, 220) !important;
+  cursor: not-allowed !important;
+  color: rgb(120, 120, 120) !important;
+}
+
+.error-message {
+  font-size: 12px;
+  color: #ff0000;
+  position: absolute;
+  left: 0;
+  top: 45px;
+  display: none;
+}
+
+.dash-icon {
+  height: 100%;
+}
+.image-icon-click {
+  cursor: pointer;
+}
+.sort-image-icon {
+  position: absolute;
+  right: 0;
+}

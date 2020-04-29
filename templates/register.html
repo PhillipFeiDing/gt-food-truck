@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GT Food Truck - Register
+{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <p class="main-title">Register</p>
+    <table class="table-4col-layout-container">
+        <tr>
+            <td>Username</td>
+            <td>
+                <input type="text" class="narrow-input-textbox" id="username-input"/>
+                <span class="error-message" id="username-error">* empty or already exists</span>
+            </td>
+            <td>Email</td>
+            <td>
+                <input type="text" class="narrow-input-textbox" id="email-input"/>
+                <span class="error-message" id="email-error">* invalid or already exists</span>
+            </td>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td>
+                <input type="text" class="narrow-input-textbox" id="first-name-input"/>
+                <span class="error-message" id="first-name-error">* empty</span>
+            </td>
+            <td>
+                Last Name
+                <span class="error-message" id="full-name-error">* full name already exists</span>
+            </td>
+            <td>
+                <input type="text" class="narrow-input-textbox" id="last-name-input"/>
+                <span class="error-message" id="last-name-error">* empty</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" class="narrow-input-textbox" id="password-input"/>
+                <span class="error-message" id="password-error">* empty or too short</span>
+            </td>
+            <td>Confirm Password</td>
+            <td>
+                <input type="password" class="narrow-input-textbox" id="confirm-password-input"/>
+                <span class="error-message" id="confirm-password-error">* passwords do not match</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Balance</td>
+            <td>
+                <input type="text" class="narrow-input-textbox" id="balance-input"/>
+                <span class="error-message" id="balance-error">* must a positive money amount</span>
+            </td>
+            <td colspan=2>
+                <div>
+                    <span class="radio-button-prompt"><input type="radio" name="user-type" value="Admin" click_count="0" class="radio-button-left">Admin</span>
+                    <span class="radio-button-prompt"><input type="radio" name="user-type" value="Manager" click_count="0" class="radio-button-left">Manager</span>
+                    <span class="radio-button-prompt"><input type="radio" name="user-type" value="Staff" click_count="0" class="radio-button-left">Staff</span>
+                </div>
+                <span class="error-message" style="left: 20px;" id="employee-type-error">* must choose one</span>
+            </td>
+        </tr>
+    </table>
+    <span class="error-message" style="left: 30px; top: 355px;" id="invalid-user-error">* You must provide at least one of balance or email.</span>
+    <span class="error-message" style="left: 365px; top: 355px;" id="employee-no-email-error">* Employee must supply email.</span>
+    <div class="div-button-container">
+        <button id="back-button">Back</button>
+        <button id="register-button">Register</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/register.js') }}"></script>
+{% endblock %}

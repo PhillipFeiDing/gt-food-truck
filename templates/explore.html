@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GT Food Truck - Explore
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dropdown.css') }}"></link>
+{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <p class="main-title">Explore</p>
+    <table class="table-2col-layout-container">
+        <tr>
+            <td>
+                Building Name
+                <div class="custom-select unselectable building-name-select-class" style="display: inline-block; margin-left: 20px;" id="building-name-select-wrapper">
+                    <select id="building-name-select">
+                        <option value="">&nbsp;</option>
+                    </select>
+                </div>
+            </td>
+            <td style="text-align: left;">
+                Station Name
+                <div class="custom-select unselectable station-name-select-class" style="display: inline-block; margin-left: 20px;" id="station-name-select-wrapper">
+                    <select id="station-name-select">
+                        <option value="">&nbsp;</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Building Tag (contain)
+                <input type="text" class="narrower-input-textbox" style="margin-left: 20px;" id="building-tag-input"/>
+            </td>
+            <td style="text-align: left;">
+                Food Truck Name (contain)
+                <input type="text" class="narrow-input-textbox" style="margin-left: 20px; width: 150px;" id="food-truck-name-input"/>
+            </td>
+        </tr>
+    </table>
+    <div style="text-align: center; padding: 15px 0;">
+        <span>Food (contain)</span>
+        <input type="text" class="narrow-input-textbox" style="margin-left: 20px;" id="food-input"/>
+    </div>
+    <div class="div-button-container">
+        <button id="filter-button">Filter</button>
+    </div>
+    <table class="table-display" cellpadding="10" id="target-table">
+        <tr>
+            <td>Station</td>
+            <td>Building</td>
+            <td>Food Truck (s)</td>
+            <td>Food (s)</td>
+        </tr>
+    </table>
+    <div style="position: relative;">
+        <div style="display: inline-block; text-align: left;" class="div-button-container">
+            <button id="back-button">Back</button>
+        </div>
+        <div class="div-button-container" style="margin-top: 0; display: inline-block; text-align: right; position: absolute; right: 0; top: 30px;">
+            <button id="select-as-current-location-button" style="margin: 0 10px 0 0;">Select As Current Location</button>
+        </div>
+        <span class="error-message" style="left: 0; top: 5;" id="none-selected-error">* no station selected</span>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/dropdown.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/explore.js') }}"></script>
+{% endblock %}

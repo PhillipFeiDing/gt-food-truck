@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GT Food Truck - Order
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/checkbox.css') }}"></link>
+<link href="http://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
+{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <p class="main-title">Order</p>
+    <p class="sub-title">
+        Food Truck:
+        <span class="sub-title-highlight">
+            <u id="foodTruck-name-display">Food Truck One</u>
+        </span>
+    </p>
+    <table class="table-display" cellpadding="10" id="target-table">
+        <tr>
+            <td>Food</td>
+            <td>Price</td>
+            <td>Purchase <br/>Quantity</td>
+        </tr>
+    </table>
+    <div style="text-align: center; position: relative; left: 0; margin-top: 10px;">
+        <span style="padding-right: 30px;">Date</span>
+        <input id="date-input" class="narrow-input-textbox" type="text" id="date-input">
+        <span class="error-message" id="invalid-date-error" style="left: 100px; top: 50px;">* invalid</span>
+        <span class="error-message" id="invalid-order-error" style="top: -10px;">* no food selected / invalid quantity</span>
+    </div>
+    <div class="div-button-container">
+        <button id="back-button">Back</button>
+        <button id="submit-button">Submit</button>
+    </div>
+    <div style="display: none;" id="calendar-image-path-data">{{ url_for('static', filename='image/calendar.png') }}</div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/order.js') }}"></script>
+{% endblock %}

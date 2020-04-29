@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GT Food Truck - Create Food
+{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <p class="main-title">Create Food</p>
+    <table class="table-2col-layout-container">
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" id="food-name-input" style="margin-left: 30px; width: 250px;"/>
+                <span class="error-message" style="left: 50px; "id="food-name-error">* empty or already exists</span>
+            </td>
+        </tr>
+    </table>
+    <div class="div-button-container">
+        <button id="back-button">Back</button>
+        <button id="create-button">Create</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/createFood.js') }}"></script>
+{% endblock %}

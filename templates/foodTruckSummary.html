@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GT Food Truck - Food Truck Summary
+{% endblock %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dropdown.css') }}"></link>
+<link href="http://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
+{% endblock%}
+
+{% block body %}
+<div class="main-container">
+    <p class="main-title">Food Truck Summary</p>
+    <table class="table-4col-layout-container">
+        <tr>
+            <td>Food Truck Name (contain)</td>
+            <td>
+                <input type="text" style="width: 175px;" id="food-truck-name-input"/>
+            </td>
+            <td>Station Name</td>
+            <td id="station-name-select-wrapper">
+                <div class="custom-select unselectable">
+                    <select id="station-name-select">
+                        <option value="">&nbsp;</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table class="table-4col-layout-container">
+        <tr>
+            <td>
+                Date
+                <span class="error-message" style="left: 0; top: 50;" id="invalid-date-range-error">* invalid range</span>
+            </td>
+            <td style="text-align: right; padding-right: 0; position: relative; bottom: 10px;">
+                <input id="from-date-input" class="narrow-input-textbox" type="text">
+            </td>
+            <td style="text-align: right;">
+                <img src="{{ url_for('static', filename='image/dash.png') }}" class="dash-icon"/>
+            </td>
+            <td style="text-align: right; padding-right: 0; position: relative; bottom: 10px;">
+                <input id="to-date-input" class="narrow-input-textbox" type="text">
+            </td>
+        </tr>
+    </table>
+    <div class="div-button-container">
+        <button id="filter-button">Filter</button>
+    </div>
+    <table class="table-display" cellpadding="10" id="target-table">
+        <tr>
+            <td><p style="position: relative; left: 0; padding: 0 20px;">Food Truck Name<img src="{{ url_for('static', filename='image/sort.png') }}" class="dash-icon image-icon-click sort-image-icon" value="foodTruckName"/></p></td>
+            <td><p style="position: relative; left: 0; padding: 0 20px;"># Total Order<img src="{{ url_for('static', filename='image/sort.png') }}" class="dash-icon image-icon-click sort-image-icon" value="totalOrder"/></p></td>
+            <td><p style="position: relative; left: 0; padding: 0 20px;">Total Revenue<img src="{{ url_for('static', filename='image/sort.png') }}" class="dash-icon image-icon-click sort-image-icon" value="totalRevenue"/></p></td>
+            <td><p style="position: relative; left: 0; padding: 0 20px;"># Customer<img src="{{ url_for('static', filename='image/sort.png') }}" class="dash-icon image-icon-click sort-image-icon" value="totalCustomer"/></p></td>
+        </tr>
+    </table>
+    <div style="position: relative;">
+        <div style="display: inline-block; text-align: left;" class="div-button-container">
+            <button id="back-button">Back</button>
+        </div>
+        <div class="div-button-container" style="margin-top: 0; display: inline-block; text-align: right; position: absolute; right: 0; top: 30px;">
+            <button id="view-detail-button" style="margin: 0 10px 0 0;">View Detail</button>
+        </div>
+        <span class="error-message" style="left: 0; top: 5;" id="none-selected-error">* no food truck selected</span>
+    </div>
+    <div style="display: none;" id="calendar-image-path-data">{{ url_for('static', filename='image/calendar.png') }}</div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/dropdown.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/foodTruckSummary.js') }}"></script>
+{% endblock %}

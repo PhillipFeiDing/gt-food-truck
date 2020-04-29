@@ -1,0 +1,72 @@
+.checkbox-wrapper { 
+    display: block; 
+    position: relative; 
+    padding-left: 30px; 
+    cursor: pointer; 
+    font-size: 18px;
+} 
+  
+/* Hide the default checkbox */ 
+input[type=checkbox] { 
+    visibility: hidden; 
+} 
+  
+/* Creating a custom checkbox 
+based on demand */ 
+.geekmark { 
+    position: absolute; 
+    top: -2px; 
+    left: 0; 
+    height: 20px; 
+    width: 20px; 
+    background-color: #ffffff; 
+    border-radius: 4px;
+    border: 1px solid rgb(110, 110, 110);
+} 
+  
+/* Specify the background color to be 
+shown when hovering over checkbox */ 
+.checkbox-wrapper:hover input ~ .geekmark { 
+    background-color: rgb(245, 245, 245); 
+} 
+  
+/* Specify the background color to be 
+shown when checkbox is active */ 
+.checkbox-wrapper input:active ~ .geekmark { 
+    background-color: rgb(235, 235, 235); 
+} 
+
+/* Specify the background color to be 
+shown when checkbox is checked */ 
+.checkbox-wrapper input:checked ~ .geekmark { 
+    background-color: rgb(225, 225, 225); 
+} 
+  
+/* Checkmark to be shown in checkbox */ 
+/* It is not be shown when not checked */ 
+.geekmark:after { 
+    content: ""; 
+    position: absolute; 
+    display: none; 
+} 
+  
+/* Display checkmark when checked */ 
+.checkbox-wrapper input:checked ~ .geekmark:after { 
+    display: block; 
+} 
+  
+/* Styling the checkmark using webkit */ 
+/* Rotated the rectangle by 45 degree and  
+showing only two border to make it look 
+like a tickmark */ 
+.checkbox-wrapper .geekmark:after { 
+    left: 6px; 
+    bottom: 4px; 
+    width: 5px; 
+    height: 10px; 
+    border: solid rgb(100, 100, 100); 
+    border-width: 0 4px 4px 0; 
+    -webkit-transform: rotate(45deg); 
+    -ms-transform: rotate(45deg); 
+    transform: rotate(45deg); 
+} 

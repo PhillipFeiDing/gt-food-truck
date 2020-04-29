@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GT Food Truck - Create Station
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dropdown.css') }}"></link>
+{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <p class="main-title">Create Station</p>
+    <table class="table-4col-layout-container">
+        <tr>
+            <td>Name</td>
+            <td colspan="3" style="padding-right: 0;">
+                <input type="text" style="width: 100%" id="name-input"/>
+                <span class="error-message" id="station-name-error">* empty or already exists</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Capapcity</td>
+            <td>
+                <input type="text" class="narrower-input-textbox" id="capacity-input"/>
+                <span class="error-message" id="invalid-capacity-error" style="top: 50px;">* invalid</span>
+            </td>
+            <td style="padding-left: 0;">Sponsored Building</td>
+            <td>
+                <div class="custom-select narrow-select unselectable" id="sponsored-building-select-wrapper">
+                </div>
+                <span class="error-message" id="no-building-error" style="top: 50px;">* must select one</span>
+            </td>
+        </tr>
+    </table>
+    <div class="div-button-container">
+        <button id="back-button">Back</button>
+        <button id="create-button">Create</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/dropdown.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/createStation.js') }}"></script>
+{% endblock %}

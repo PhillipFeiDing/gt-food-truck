@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GT Food Truck - Current Information
+{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <p class="main-title">Current Information</p>
+    <table class="table-2col-layout-container">
+        <tr>
+            <td style="font-size: 20px;">Station</td>
+            <td class="highlight" id="station-display">Station One</td>
+        </tr>
+        <tr>
+            <td style="font-size: 20px;">Building</td>
+            <td class="highlight" id="building-display">Building One</td>
+        </tr>
+        <tr>
+            <td style="font-size: 20px;">Building Tag(s)</td>
+            <td class="highlight" id="building-tag-display">Ada, Chemistry</td>
+        </tr>
+        <tr>
+            <td style="font-size: 20px;">Description</td>
+            <td class="highlight" id="description-display">Description for Building One</td>
+        </tr>
+        <tr>
+            <td style="font-size: 20px;">Balance</td>
+            <td class="highlight" id="balance-display">100</td>
+        </tr>
+    </table>
+    <table class="table-display" cellpadding="10" style="position: relative;" id="target-table">
+        <tr>
+            <td>Food Truck</td>
+            <td>Manager</td>
+            <td>Food(s)</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="radio-button-wrapper">
+                    <span class="radio-button-prompt"><input type="radio" name="food-truck" value="Food Truck One" class="radio-button-left">Food Truck One</span>
+                </div>
+            </td>
+            <td>Manager One</td>
+            <td>Apple, Banana</td>
+        </tr>
+        <tr>
+            <td>
+                <div class="radio-button-wrapper">
+                    <span class="radio-button-prompt"><input type="radio" name="food-truck" value="Food Truck Two" class="radio-button-left">Food Truck Two</span>
+                </div>
+            </td>
+            <td>Manager One</td>
+            <td>Apple Coffee</td>
+        </tr>
+    </table>
+    <div class="div-button-container" style="position: relative;">
+        <button id="back-button">Back</button>
+        <button id="order-button">Order</button>
+        <span class="error-message" style="top: -25px;"id="none-selected-error">* no food truck selected</span>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/currentInformation.js') }}"></script>
+{% endblock %}

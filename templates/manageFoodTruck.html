@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}
+GT Food Truck - Mange Food Truck
+{% endblock %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dropdown.css') }}"></link>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/checkbox.css') }}"></link>
+{% endblock%}
+
+{% block body %}
+<div class="main-container">
+    <p class="main-title">Manage Food Truck</p>
+    <table class="table-4col-layout-container">
+        <tr>
+            <td>Food Truck Name (contain)</td>
+            <td>
+                <input type="text" style="width: 175px;" id="food-truck-name-input"/>
+            </td>
+            <td>Station Name</td>
+            <td id="station-name-select-wrapper">
+            </td>
+        </tr>
+    </table>
+    <table class="table-4col-layout-container">
+        <tr>
+            <td>Staff Count</td>
+            <td>
+                <table calss="inner-table" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="inner-table-cell"><input type="text" class="narrowest-input-textbox" id="staff-count-input-low" style="display: flex"/></td>
+                        <td class="inner-table-cell"><img src="{{ url_for('static', filename='image/dash.png') }}" class="dash-icon"/></td>
+                        <td class="inner-table-cell"><input type="text" class="narrowest-input-textbox" id="staff-count-input-high" style="display: flex"/></td>
+                        <span class="error-message" id="invalid-range-error">* invalid range</span>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <label class="checkbox-wrapper">
+                    Has Remaining Capacity
+                    <input type="checkbox" id="has-remaining-capacity-input"> 
+                    <span class="geekmark"></span> 
+                </label> 
+            </td>
+            <td>
+                <div class="div-button-container" style="margin-top: 0;">
+                    <button id="filter-button">Filter</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table class="table-display" cellpadding="10" id="target-table">
+        <tr>
+            <td>Food Truck Name</td>
+            <td>Station Name</td>
+            <td>Remaining Capacity</td>
+            <td>Staff(s)</td>
+            <td>#Menu Items</td>
+        </tr>
+    </table>
+    <div style="position: relative;">
+        <div style="display: inline-block; text-align: left;" class="div-button-container">
+            <button id="back-button">Back</button>
+        </div>
+        <div class="div-button-container" style="margin-top: 0; display: inline-block; text-align: right; position: absolute; right: 0; top: 30px;">
+            <button id="create-button" style="margin: 0 10px 0 0;">Create</button>
+            <button id="update-button" style="margin: 0 10px 0 10px;">Update</button>
+            <button id="delete-button" style="margin: 0 0 0 10px;">Delete</button>
+        </div>
+        <span class="error-message" style="left: 0; top: 5;" id="none-selected-error">* no food truck selected</span>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/dropdown.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/manageFoodTruck.js') }}"></script>
+{% endblock %}
