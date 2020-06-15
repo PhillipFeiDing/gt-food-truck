@@ -46,7 +46,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='/Users/phillip/Desktop/cs4400-project-phase4/env'
+VIRTUAL_ENV='/Users/phillip/Desktop/PHILLIP/github/gt-food-truck/env'
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
