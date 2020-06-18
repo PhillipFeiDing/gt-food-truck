@@ -32,5 +32,33 @@ roles.forEach((role) => {
     } else if (role == 'Admin') {
         $('#manage-building-and-station-button').prop('disabled', false)
         $('#manage-food-button').prop('disabled', false)
+        $('#reset-state-button').prop('disabled', false)
     }
 })
+
+$('#reset-state-button').on('click', () => {
+    if (window.confirm('You are about to reset default database state. This is potentially destructive. Are you sure to continue?')) {
+        post('/api/admin/resetState', {}).then(res => {
+            if (res.okay) {
+                window.location.href = '/'
+            } else {
+                window.alert('Database error.')
+            }
+        })
+    }
+})
+
+// Send get request
+function get(url) {
+    return $.get(url)
+}
+
+// Send post request
+function post(url, data = {}) {
+    return $.ajax({
+        type: 'post',
+        url,
+        data: JSON.stringify(data),
+        contentType: "application/json",
+    })
+}

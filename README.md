@@ -5,9 +5,8 @@ The frontend portion of the CS4400 project, no framework used, simple HTML, CSS,
 Using Python Flask for backend, and starting to integrate the project.
 
 # Setup
-- `virtualenv env`
-- `source env/bin/activate`
-- `pip3 install flask`
-- `pip3 install pymysql`
-- `pip3 install flask_login`
+- `virtualenv venv`
+- `source venv/bin/activate`
+- `pip install -r requirements.txt`
 - `python app.py`
+
