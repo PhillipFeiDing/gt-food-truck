@@ -861,17 +861,11 @@ BEGIN
         INNER JOIN
         BuildingTag ON Station.buildingName  = BuildingTag.buildingName 
         WHERE
-        (i_buildingName is NULL OR i_buildingName = "" OR i_buildingName = Station.buildingName) AND
-        (i_stationName is NULL OR i_stationName = "" OR i_stationName = Station.stationName) AND
-        (i_buildingTag is NULL OR i_buildingTag = "" OR BuildingTag.tag LIKE CONCAT('%', i_buildingTag, '%')) AND
-        (i_foodTruckName is NULL OR i_foodTruckName = "" OR FoodTruck.stationName in (
-            SELECT DISTINCT stationName FROM FoodTruck
-            WHERE foodTruckName LIKE CONCAT('%', i_foodTruckName, '%')
-        )) AND
-        (i_foodName is NULL OR i_foodName = "" OR FoodTruck.stationName in (
-            SELECT DISTINCT stationName FROM FoodTruck NATURAL JOIN MenuItem
-            WHERE foodName LIKE CONCAT('%', i_foodName, '%')
-        ))
+        (i_buildingName is NULL OR i_buildingName = Station.buildingName) AND
+        (i_stationName is NULL OR i_stationName = Station.stationName) AND
+        (i_buildingTag is NULL OR BuildingTag.tag LIKE CONCAT('%', i_buildingTag, '%')) AND
+        (i_foodTruckName is NULL OR FoodTruck.foodTruckName LIKE CONCAT('%', i_foodTruckName, '%')) AND
+        (i_foodName is NULL OR MenuItem.foodName LIKE CONCAT('%', i_foodName, '%'))
         GROUP BY Station.stationName;
         
 END //

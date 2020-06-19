@@ -410,3 +410,16 @@ def api_admin_deleteFood():
         return ErrorModel({'errno': 2}).json()
     
     return SuccessModel({}).json()
+
+
+"""
+    This API is used for restoring default database satte.
+"""
+@app.route('/api/admin/resetState', methods=['POST'])
+def api_amdin_resetState():
+    if not hasattr(current_user, 'roles') or 'Admin' not in current_user.roles:
+        return ErrorModel('No Privilege: Must be Admin').json()
+    
+    mysqlDB.executeSqlFile('db-setup/phase4-reset.sql')
+
+    return SuccessModel({}).json()

@@ -43,6 +43,29 @@ class MySQL:
                 'okay': False,
                 'error': str(e)
             }
+    
+    def executeSqlFile(self, path):
+        lines = self._parse_sql(path)
+        try:
+            with self.connection.cursor() as cursor:
+                for line in lines:
+                    cursor.execute(line, None)
+            return {
+                'okay': True
+            }
+        except Exception as e:
+            self._printError(e)
+            self._errored = True
+            return {
+                'okay': False,
+                'error': str(e)
+            }
+
+    def _parse_sql(self, filename):
+        lines = []
+        with open(filename, 'r') as fh:
+            lines = fh.read().split('\n')
+        return lines
 
     def tryCommit(self):
         ret = True
