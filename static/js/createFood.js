@@ -3,7 +3,7 @@ $('#back-button').on('click', () => {
 })
 $('#create-button').on('click', () => {
     const name = $('#food-name-input').val()
-    if (!name) {
+    if (!name || name.indexOf(' ') !== -1) {
         $('#food-name-error').css('display', 'inline')
         return
     }

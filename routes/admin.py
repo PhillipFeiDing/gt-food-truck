@@ -420,4 +420,6 @@ def api_amdin_resetState():
     if not hasattr(current_user, 'roles') or 'Admin' not in current_user.roles:
         return ErrorModel('No Privilege: Must be Admin').json()
     
+    mysqlDB.executeSqlFile('db-setup/phase4-reset.sql')
+
     return SuccessModel({}).json()
