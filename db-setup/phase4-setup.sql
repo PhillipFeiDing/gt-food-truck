@@ -6,6 +6,8 @@ USE cs4400spring2020;
 -- UPDATE and DELETE queries will work without restrictions.  You don't
 -- have to replicate this command anywhere else in your code.
 SET SQL_SAFE_UPDATES = 0;
+SET default_storage_engine=INNODB;
+SET AUTO_INCREMENT_INCREMENT=1;
 
 CREATE TABLE cs4400spring2020.`User`(
     username VARCHAR(55) PRIMARY KEY,
@@ -374,7 +376,7 @@ END //
 DELIMITER ;
 
 -- Query #8a: ad_view_building_general [Screen #6 Admin Update Building]
-DROP PROCEDURE IF EXISTS ad_view_building;
+DROP PROCEDURE IF EXISTS ad_view_building_general;
 DELIMITER //
 CREATE PROCEDURE ad_view_building_general(IN i_buildingName VARCHAR(55))
 BEGIN
