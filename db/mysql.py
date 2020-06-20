@@ -4,10 +4,19 @@ import pymysql.cursors
 class MySQL:
     
     def __init__(self):
-        self.connection = pymysql.connect(host='localhost',
-                                user='root',
-                                password='997971',
-                                db='cs4400spring2020',
+        """for local"""
+        # self.connection = pymysql.connect(host='localhost',
+        #                         user='root',
+        #                         password='997971',
+        #                         db='cs4400spring2020',
+        #                         charset='utf8mb4',
+        #                         cursorclass=pymysql.cursors.DictCursor)
+
+        """for remote"""
+        self.connection = pymysql.connect(host='us-cdbr-east-05.cleardb.net',
+                                user='ba651b9e9cd5f4',
+                                password='8856e4fb',
+                                db='heroku_4627316c0ce34ce',
                                 charset='utf8mb4',
                                 cursorclass=pymysql.cursors.DictCursor)
         self._errored = False
