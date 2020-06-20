@@ -1,11 +1,13 @@
 from flask import Flask
 from db.mysql import MySQL
 from login.loginHelper import LoginHelper
-
+import settings
 
 app = Flask(__name__)
+settings.app = app
 
 mysqlDB = MySQL()
+settings.mysqlDB = mysqlDB
 
 loginHelper = LoginHelper(app)
 

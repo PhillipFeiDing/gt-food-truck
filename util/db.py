@@ -1,5 +1,8 @@
-from __main__ import mysqlDB
 import functools
+import settings
+
+
+mysqlDB = settings.mysqlDB
 
 
 def checkExist(table, condition, field):

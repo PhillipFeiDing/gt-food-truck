@@ -1,5 +1,8 @@
-from __main__ import app
 from flask import render_template
+import settings
+
+
+app = settings.app
 
 
 @app.route('/')

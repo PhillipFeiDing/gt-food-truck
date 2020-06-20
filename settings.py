@@ -1,0 +1,2 @@
+app = None
+mysqlDB = None
