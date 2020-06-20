@@ -37,7 +37,12 @@ roles.forEach((role) => {
 })
 
 $('#reset-state-button').on('click', () => {
+    const disabled = true
     if (window.confirm('You are about to reset default database state. This is potentially destructive. Are you sure to continue?')) {
+        if (disabled) {
+            window.alert('Sorry, this feature has just been turned off by developer due to the unstable nature of free cloud database. If you are interested. Please clone the repository at https://github.com/PhillipFeiDing/gt-food-truck and run it locally.')
+            return
+        }
         post('/api/admin/resetState', {}).then(res => {
             if (res.okay) {
                 window.location.href = '/'
