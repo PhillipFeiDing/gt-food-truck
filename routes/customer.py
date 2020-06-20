@@ -1,4 +1,3 @@
-from __main__ import app, mysqlDB
 from flask import request, make_response
 from model.dataModel import SuccessModel, ErrorModel
 from login.user import User
@@ -7,6 +6,11 @@ from util.db import checkExist, callProcedure, select
 from util.data_cleaning import cleanDecimal, formatDate, formatOrderID
 import datetime
 import json
+import settings
+
+
+app = settings.app
+mysqlDB = settings.mysqlDB
 
 
 """
